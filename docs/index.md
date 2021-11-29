@@ -18,7 +18,7 @@ dependencies:
 
 
 ```crystal
-require "comandante-msgpack/msgpack"
+require "comandante-msgpack"
 ```
 
 This is actually a wrapper around [msgpack-crsytal](https://github.com/crystal-community/msgpack-crystal/). 
