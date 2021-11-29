@@ -1,0 +1,16 @@
+name: comandante-msgpack
+version: v0.1.0
+
+authors:
+  - Tarek Ghaleb <tghaleb@users.noreply.github.com>
+
+crystal: 1.2.0
+
+dependencies:
+  comandante:
+    git: https://github.com/tghaleb/comandante.git
+  msgpack:
+    git: https://github.com/crystal-community/msgpack-crystal.git
+
+license: MIT
+

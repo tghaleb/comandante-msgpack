@@ -1,0 +1,20 @@
+site_name: Comandante
+
+theme:
+  name: windmill
+  highlightjs: true
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: crystal
+      watch: [src]
+
+
+markdown_extensions:
+  - pymdownx.highlight
+  - deduplicate-toc
+  - callouts
+
+nav:
+  - Home: index.md
