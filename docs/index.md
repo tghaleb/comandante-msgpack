@@ -1,4 +1,4 @@
-# Welcome to Comandante/Msgpack
+# Comandante/Msgpack
 
 An add-on for [Comandante](https://github.com/tghaleb/comandante/) for simplifying msgpack reading/writing.
 
