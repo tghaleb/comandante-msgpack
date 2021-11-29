@@ -1,4 +1,4 @@
-site_name: Comandante
+site_name: Comandante-msgpack
 
 theme:
   name: windmill
@@ -14,7 +14,6 @@ plugins:
 markdown_extensions:
   - pymdownx.highlight
   - deduplicate-toc
-  - callouts
 
 nav:
   - Home: index.md
