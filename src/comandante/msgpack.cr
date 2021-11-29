@@ -15,12 +15,13 @@ module Comandante
     # - Asserts file exists
     # - Raises `MessagePack::EofError` if file is empty
     # - Raises MessagePack::TypeCastError if not the correct type
-    def self.read_msgpack(file, type)
+    #
+    # NOTE: you pass an object of the desired type
+    def self.read_msgpack(file, data)
       Helper.assert_file(file)
-      data = type.new
 
       File.open(file, "r") do |io|
-        data = type.from_msgpack(io)
+        data = data.class.from_msgpack(io)
       end
 
       return data
@@ -30,17 +31,18 @@ module Comandante
 
     # - Asserts file exists
     # - Raises MessagePack::TypeCastError if not the correct type
-    def self.read_msgpack(file, type, &block) : Nil
+    #
+    # NOTE: you pass an object of the desired type
+    def self.read_msgpack(file, data, &block) : Nil
       Helper.assert_file(file)
-      data = type.new
 
       File.open(file, "r") do |io|
         begin
-          data = type.from_msgpack(io)
+          data = data.class.from_msgpack(io)
 
           while !data.nil?
             yield data
-            data = type.from_msgpack(io)
+            data = data.class.from_msgpack(io)
           end
         rescue MessagePack::EofError
           # then we are done

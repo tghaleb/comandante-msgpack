@@ -12,12 +12,12 @@ describe Comandante::Helper do
     Cleaner.tempfile do |f|
       Helper.write_msgpack(data_a, f)
 
-      data = Helper.read_msgpack(f, Array(Int32))
+      data = Helper.read_msgpack(f, Array(Int32).new)
       data.should eq(data_a)
 
       Helper.write_msgpack(data_b, f, mode = "a")
 
-      Helper.read_msgpack(f, Array(Int32)) do |data|
+      Helper.read_msgpack(f, Array(Int32).new) do |data|
         results << data
       end
       results[0].should eq(data_a)

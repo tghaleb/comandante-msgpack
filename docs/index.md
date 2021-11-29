@@ -18,7 +18,7 @@ dependencies:
 
 
 ```crystal
-require "comandante/msgpack"
+require "comandante-msgpack/msgpack"
 ```
 
 This is actually a wrapper around [msgpack-crsytal](https://github.com/crystal-community/msgpack-crystal/). 
@@ -56,7 +56,7 @@ If you need something more complicated than this use
 To read one object,
 
 ```crystall
-data = Helper.read_msgpack(f, Array(Int32))
+data = Helper.read_msgpack(f, Array(Int32).new)
 ```
 
 This will raise an error if you pass the wrong data type or in case the
@@ -65,7 +65,7 @@ file is empty.
 To read multiple objects, for example multiple Arrays from a file,
 
 ```crystall
-Helper.read_msgpack(f, Array(Float64)) do |data|
+Helper.read_msgpack(f, Array(Float64).new) do |data|
   puts data.inspect
 end 
 ```
