@@ -5,7 +5,7 @@ An add-on for [Comandante](https://github.com/tghaleb/comandante/) for simplifyi
 
 ## Documentation
 
-<https://tghaleb.eu.org/comandante-msgpack>
+<https://www.tghaleb.eu.org/comandante-msgpack>
 
 ## Contributors
 
